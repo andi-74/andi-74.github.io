@@ -1,0 +1,364 @@
+/*
+clover green: #3cb043
+neon green: #9bcc78
+charcoal grey: #333333
+smokey grey: #666666
+*/
+
+/* TEXT STYLES */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: "Ubuntu", sans-serif;
+    text-transform: capitalize;
+    margin: 1rem 0rem;
+}
+
+h4, h5, h6 {
+    font-family: "Open Sans", sans-serif;
+    text-transform: capitalize;
+    margin: 1rem 0rem;
+}
+
+h1 {
+    font-size: 3.25rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.75rem;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 2.25rem;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+}
+
+.title {
+    font-size: 4.5rem;
+    margin: 2rem 0rem;
+    text-transform: none;
+}
+
+.click-here {
+    text-transform: uppercase;
+    font-weight: 600 !important;
+    font-size: .9rem;
+    line-height: 1.5rem;
+    border-bottom: 2px solid #9bcc78;
+}
+
+.button {
+    border: 3px solid #3cb043;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 800 !important;
+
+}
+
+.highlight {
+    font-style: oblique;
+    border-left: 4px solid #9bcc78;
+    padding: 1rem 0rem 1rem 2rem;
+}
+
+.desc {
+    font-size: .95rem;
+    line-height: 2rem;
+    text-align: center;
+    margin: 0rem !important;
+}
+
+.note {
+    font-size: .75rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* THEMES & COLOR SCHEMES */
+
+.black {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.black a {
+    color: whitesmoke;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.black a:hover {
+    color: #9bcc78;
+}
+
+.charcoal {
+    background-color: #333333;
+    color: white;
+}
+
+.charcoal a {
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.charcoal a:hover {
+    color: #3cb043;
+}
+
+.clover-green {
+    color: #3cb043;
+}
+
+.neon-green {
+    color: #9bcc78;
+}
+
+.whitesmoke {
+    color: whitesmoke;
+}
+
+.clover-green path {
+    fill: #3cb043;
+}
+
+.watermark path {
+    fill: #333333;
+    opacity: .15;
+}
+
+/* BASIC LAYOUT */
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.section {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+
+.content-gutters {
+    display: grid;
+    min-width: 800px;
+    width: 1280px;
+    max-width: 1280px;
+}
+
+.auto-columns {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.feature-right {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.auto-rows {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.centered {
+    align-items: center;
+    justify-items: center;
+}
+
+.centered-top {
+    align-items: start;
+    justify-items: start;
+}
+
+.rounded-corners-lg {
+    display: grid;
+    border-radius: 45px;
+    overflow: hidden;
+}
+
+.rounded-corners-md {
+    display: grid;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.parallax {
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* SPACING */
+
+.vertical-padding-lg {
+    padding: 120px 0px;
+}
+
+.vertical-padding-md {
+    padding: 60px 0px;
+}
+
+.vertical-padding-md p {
+    margin: 2rem 0rem;
+}
+
+.vertical-padding-sm {
+    padding: 30px 0px;
+}
+
+.vertical-padding-xsm {
+    padding: 15px 0px;
+}
+
+.horizontal-padding-lg {
+    padding: 0px 120px;
+}
+
+.horizontal-padding-md {
+    padding: 0px 60px;
+}
+
+.horizontal-padding-sm {
+    padding: 0px 30px;
+}
+
+/* SIZING */
+
+.logo {
+    display: grid;
+    align-items: center;
+}
+
+.logo-lg {
+    width: 120px;
+    height: 120px;
+}
+
+.logo-md {
+    width: 80px;
+    height: 80px;
+}
+
+.logo-sm {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-xsm {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-lg {
+    font-size: 6rem;
+    text-align: center;
+}
+
+.icon-md {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.icon-sm {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.fill {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.fullsize {
+    width: 100%;
+    height: auto;
+}
+
+.stretch {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* NAVBAR FORMATTING */
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.navbar {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar-links {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(80px, auto);
+    gap: 10px;
+    padding: 10px;
+    justify-items: center;
+}
+
+.navbar-links p {
+    font-size: 1.15rem;
+    margin: .75rem 1rem;
+}
+
+.social-links {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(40px, auto);
+    gap: 10px;
+    padding: 10px;
+    justify-items: center;
+}
+
+/* WOW PAGE CUSTOMIZATIONS */
+
+.ww-bgimg {
+    background-image: url("images/wws1-background.png");
+    min-height: 400px;
+}
