@@ -47,6 +47,11 @@ h4 {
 
 h5 {
     font-size: 1.5rem;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 1.25rem;
     font-weight: 400;
 }
 
@@ -69,12 +74,21 @@ p {
     border-bottom: 2px solid #9bcc78;
 }
 
-.button {
+.button-md {
     border: 3px solid #3cb043;
     padding: 1rem;
+    min-width: 180px;
     text-transform: uppercase;
     font-weight: 800 !important;
+}
 
+.button-sm {
+    border: 2px solid #3cb043;
+    padding: .5rem;
+    min-width: 120px;
+    font-size: .9rem;
+    text-transform: uppercase;
+    font-weight: 600 !important;
 }
 
 .highlight {
@@ -83,15 +97,32 @@ p {
     padding: 1rem 0rem 1rem 2rem;
 }
 
-.desc {
+.desc-md {
     font-size: .95rem;
     line-height: 2rem;
-    text-align: center;
+    margin: 0rem !important;
+}
+
+.desc-sm {
+    font-size: .90rem;
+    line-height: 2rem;
+    font-weight: 500;
+    font-style: oblique;
     margin: 0rem !important;
 }
 
 .note {
     font-size: .75rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.fullsize {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 *, *::before, *::after {
@@ -100,34 +131,39 @@ p {
 
 /* THEMES & COLOR SCHEMES */
 
-.black {
+.black-bg {
     background-color: black;
     color: whitesmoke;
 }
 
-.black a {
+.black-bg a {
     color: whitesmoke;
     font-weight: 400;
     text-decoration: none;
 }
 
-.black a:hover {
+.black-bg a:hover {
     color: #9bcc78;
 }
 
-.charcoal {
+.charcoal-bg {
     background-color: #333333;
     color: white;
 }
 
-.charcoal a {
+.charcoal-bg a {
     color: white;
     font-weight: 400;
     text-decoration: none;
 }
 
-.charcoal a:hover {
+.charcoal-bg a:hover {
     color: #3cb043;
+}
+
+.clover-green-bg {
+    background-color: #3cb043;
+    color: black;
 }
 
 .clover-green {
@@ -153,6 +189,10 @@ p {
 
 /* BASIC LAYOUT */
 
+.hidden {
+    display: none !important;
+}
+
 .main {
     display: grid;
     grid-template-columns: 1fr;
@@ -172,15 +212,30 @@ p {
     max-width: 1280px;
 }
 
+.merge-two {
+    grid-column: 1 / 3;
+}
+
 .auto-columns {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
 
+.min-columns {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+}
+
 .two-columns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .feature-right {
@@ -193,14 +248,20 @@ p {
     grid-auto-flow: row;
 }
 
-.centered {
-    align-items: center;
-    justify-items: center;
+.two-rows {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
 }
 
-.centered-top {
+.middle {
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.middle-top {
     align-items: start;
-    justify-items: start;
+    justify-items: center;
 }
 
 .rounded-corners-lg {
@@ -215,6 +276,18 @@ p {
     overflow: hidden;
 }
 
+.rounded-corners-sm {
+    display: grid;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.rounded-corners-xsm {
+    display: grid;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
 .parallax {
     width: 100%;
     background-attachment: fixed;
@@ -223,7 +296,68 @@ p {
     background-size: cover;
 }
 
+.overlay {
+    position: relative;
+}
+
+.underlay {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+}
+
+.backdrop {
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1000; /* Ensures it's above other content */
+  }
+
 /* SPACING */
+
+.margin-top-md {
+    margin-top: 30px;
+}
+
+.margin-top-sm {
+    margin-top: 15px;
+}
+
+.gap-md {
+    grid-gap: 2rem;
+}
+
+.gap-sm {
+    grid-gap: 1.5rem;
+}
+
+.gap-xsm {
+    grid-gap: .75rem;
+}
+
+.column-lg {
+    max-width: 50vw;
+}
+
+.column-md {
+    max-width: 25vw;
+}
+
+.column-sm {
+    max-width: 20vw;
+}
+
+.padding-md {
+    padding: 60px;
+}
+
+.padding-sm {
+    padding: 30px;
+}
 
 .vertical-padding-lg {
     padding: 120px 0px;
@@ -323,6 +457,7 @@ p {
 .sticky {
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 .navbar {
@@ -362,3 +497,116 @@ p {
     background-image: url("images/wws1-background.png");
     min-height: 400px;
 }
+
+/* FORM CUSTOMIZATIONS */
+
+.form {
+    position: relative;
+}
+
+.form h5 {
+    margin: 0px;
+}
+
+.form-step {
+    grid-template-columns: repeat(2, minmax(240px, 1fr))
+}
+
+.form-input {
+    min-height: 40px;
+    display: grid;
+    align-items: center;
+    min-width: 120px;
+}
+
+.form-input input, .form-input select {
+    box-sizing: border-box;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 2px solid #9bcc78;
+    background-color: whitesmoke;
+}
+
+.form-input label {
+    font-size: .9rem;
+}
+
+select.placeholder option:first-child {
+    color: grey;
+}
+
+select.placeholder option {
+    color: black;
+}
+
+/* Style for disabled inputs */
+input:disabled, select:disabled {
+    opacity: .8;
+    cursor: not-allowed; /* Optional: Show a not-allowed cursor */
+}
+
+/* Style for disabled selects (if needed to override default) */
+select:disabled {
+    appearance: none; /* Remove native dropdown styling (optional) */
+}
+
+
+.checkbox-left {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    accent-color: #9bcc78;
+    gap: 0px 6px;
+    max-height: 20px;
+}
+
+.check-sm {
+    height: 16px;
+    width: 16px;
+}
+
+.form-response {
+    display: grid;
+    position: absolute;
+    justify-content: center;
+    padding: 0rem 1rem;
+}
+
+.form-response p {
+    font-size: .9rem;
+    font-weight: 550;
+}
+
+.form-error {
+    background: #cc7867;
+    color: black;
+}
+
+.form-success {
+    background: #9bcc78;
+    color: black;
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.spinner {
+    border: 8px solid #9bcc78; /* Light grey */
+    border-top: 8px solid #333333; /* Dark grey (spinner color) */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    position: absolute;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
