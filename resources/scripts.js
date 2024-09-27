@@ -149,8 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formAction = 'https://flukegaming.azurewebsites.net/raidsignup.php';
         fetch(formAction, {
             method: 'POST',
-            body: formData,
-            mode: 'no-cors' // DEBUG
+            body: formData
         })
         .then(response => {
             if (!response.ok) {
