@@ -11,6 +11,7 @@
         <meta name="description" content="Fluke Gaming is a laid-back community of semi-casual gamers who raid together in WoW and host private Steam servers. We value respect, inclusivity, and friendship. Find us on Discord, Twitch, and more!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="resources/main.css">
+        <link rel="stylesheet" href="resources/wow.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu'>
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open Sans'>
@@ -32,10 +33,10 @@
                             <a href="wow.html">
                                 <i class="ico-home ico-large"></i><p>WoW</p>
                             </a>
-                            <a href="discord.html">
+                            <a href="coming-soon.html">
                                 <i class="ico-home ico-large"></i><p>Discord</p>
                             </a>
-                            <a href="streamers.html">
+                            <a href="coming-soon.html">
                                 <i class="ico-home ico-large"></i><p>Twitch</p>
                             </a>
                         </nav>
@@ -58,7 +59,7 @@
                         <div class="horizontal-padding-sm">
                             <p>We are a semi-casual guild with an AOTC heroic raiding group. We welcome all kinds of players to join us for keystones, normal and heroic raiding, and more.</p>
                             <h5 class="clover-green">Progression raiding Wednesday nights from 8pm to 11pm EST.</h5>
-                            <p class="highlight">Currently accepting signups for Season 1 of War Within <u>normal progression</u>.</p>
+                            <p class="highlight">Currently accepting signups for Season 1 of War Within <u>heroic progression</u>.</p>
                             <p>To see us in action, you can watch us on Twitch, check our progression on Raider.IO, or inspect our raid logs on Warcraft Logs.</p>
 
                             <div class="auto-columns vertical-padding-xsm middle tiles">
@@ -80,7 +81,7 @@
                                         <span class="click-here">Warcraft Logs</span>
                                     </div>
                                 </a>
-                                <a>
+                                <a style="cursor: pointer;" onclick="smoothScroll(document.getElementById('signup-form'))">
                                     <div class="auto-rows middle">
                                         <div class="logo logo-sm"><i class="fa-solid fa-circle-down icon-sm whitesmoke"></i></div>
                                         <span class="click-here">Sign Up</span>
@@ -88,7 +89,7 @@
                                 </a>
                             </div>
                             <div class="auto-columns vertical-padding-sm middle">
-                                <a class="button-md rounded-corners-md" href="streamers.html">Check out our official streamers</a>
+                                <a class="button-md rounded-corners-md" href="coming-soon.html">Check out our official streamers</a>
                             </div>
                         </div>
                     </div>
@@ -225,7 +226,7 @@
                 </div>
             </div>
 
-            <div class="section black-bg">
+            <div id="signup-form" class="section black-bg">
                 <div class="content-gutters">
                     <h5 class="clover-green center">Progression raiding Wednesday nights from 8pm to 11pm EST.</h5>
                     <div class="two-columns vertical-padding-md middle-top">

@@ -133,6 +133,10 @@ p {
 
 /* THEMES & COLOR SCHEMES */
 
+.black {
+    color: black;
+}
+
 .black-bg {
     background-color: black;
     color: whitesmoke;
@@ -176,6 +180,11 @@ p {
     color: #9bcc78;
 }
 
+.white-bg {
+    background-color: white;
+    color: black;
+}
+
 .whitesmoke {
     color: whitesmoke;
 }
@@ -187,6 +196,10 @@ p {
 .watermark path {
     fill: #333333;
     opacity: .15;
+}
+
+.greyfill {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
 }
 
 /* BASIC LAYOUT */
@@ -243,6 +256,11 @@ p {
 .feature-right {
     display: grid;
     grid-template-columns: 1fr 2fr;
+}
+
+.feature-left {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 
 .auto-rows {
@@ -381,6 +399,10 @@ p {
     padding: 15px 0px;
 }
 
+.horizontal-padding-xlg {
+    padding: 0px 240px;
+}
+
 .horizontal-padding-lg {
     padding: 0px 120px;
 }
@@ -439,7 +461,7 @@ p {
     width: 100%;
     height: auto;
     max-height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .fullsize {
@@ -493,122 +515,12 @@ p {
     justify-items: center;
 }
 
-/* WOW PAGE CUSTOMIZATIONS */
+/* PAGE CUSTOMIZATIONS */
 
-.ww-bgimg {
-    background-image: url("images/wws1-background.png");
+.cs-bgimg {
+    background-image: url("images/bosskill-background.png");
     min-height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-
-/* FORM CUSTOMIZATIONS */
-
-.form {
-    position: relative;
-}
-
-.form h5 {
-    margin: 0px;
-}
-
-.form-step {
-    grid-template-columns: repeat(2, minmax(240px, 1fr))
-}
-
-.form-input {
-    min-height: 40px;
-    display: grid;
-    align-items: center;
-    min-width: 120px;
-}
-
-.form-input input, .form-input select {
-    box-sizing: border-box;
-    padding: 10px 12px;
-    font-size: 1rem;
-    border: 2px solid #9bcc78;
-    background-color: whitesmoke;
-}
-
-.form-input label {
-    font-size: .9rem;
-}
-
-select.placeholder option:first-child {
-    color: grey;
-}
-
-select.placeholder option {
-    color: black;
-}
-
-/* Style for disabled inputs */
-input:disabled, select:disabled {
-    opacity: .8;
-    cursor: not-allowed; /* Optional: Show a not-allowed cursor */
-}
-
-/* Style for disabled selects (if needed to override default) */
-select:disabled {
-    appearance: none; /* Remove native dropdown styling (optional) */
-}
-
-
-.checkbox-left {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    accent-color: #9bcc78;
-    gap: 0px 6px;
-    max-height: 20px;
-}
-
-.check-sm {
-    height: 16px;
-    width: 16px;
-}
-
-.form-response {
-    display: grid;
-    position: absolute;
-    justify-content: center;
-    padding: 0rem 1rem;
-}
-
-.form-response p {
-    font-size: .9rem;
-    font-weight: 550;
-}
-
-.form-error {
-    background: #cc7867;
-    color: black;
-}
-
-.form-success {
-    background: #9bcc78;
-    color: black;
-}
-
-.close-icon {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.spinner {
-    border: 8px solid #9bcc78; /* Light grey */
-    border-top: 8px solid #333333; /* Dark grey (spinner color) */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-    display: inline-block;
-    position: absolute;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
