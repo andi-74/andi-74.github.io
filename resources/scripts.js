@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         raidAlts.forEach(function(input) {
             if (checkbox.checked) {
-                input.setAttribute('required', ''); // Make inputs required
+                input.setAttribute('required', true); // Make inputs required
             } else {
                 input.removeAttribute('required'); // Remove required attribute
             }
@@ -136,16 +136,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('raidform');
         const formData = new FormData(form);
 
-        const formSpinner = document.getElementById('raidspinner');
-        formSpinner.classList.remove('hidden');
-        
-        // Disable form while processing
-        const formElements = form.elements;
-        for (let i = 0; i < formElements.length; i++) {
-            formElements[i].disabled = true;
-        }
-
         if (form.checkValidity()) {
+
+            const formSpinner = document.getElementById('raidspinner');
+            formSpinner.classList.remove('hidden');
+            
+            // Disable form while processing
+            const formElements = form.elements;
+            for (let i = 0; i < formElements.length; i++) {
+                formElements[i].disabled = true;
+            }
+            
             // Submit form data
             const formAction = 'https://flukegaming.azurewebsites.net/raidsignup.php';
             fetch(formAction, {

@@ -53,6 +53,8 @@ h5 {
 h6 {
     font-size: 1.25rem;
     font-weight: 400;
+    font-variant: small-caps;
+    margin: 0;
 }
 
 p {
