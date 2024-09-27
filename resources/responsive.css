@@ -27,6 +27,22 @@ smokey grey: #666666
 
 /* Styles for small screens (phones) */
 @media only screen and (max-width: 480px) {
+    
+    .content-gutters {
+        display: grid;
+        min-width: 360px;
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .two-columns {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .rounded-corners-lg {
+        max-width: 360px;
+    }
 
     .title {
         font-size: 2.5rem;
@@ -60,21 +76,5 @@ smokey grey: #666666
     .logo-sm {
         width: 30px;
         height: 30px;
-    }
-
-    .content-gutters {
-        display: grid;
-        min-width: 360px;
-        width: 100%;
-        max-width: 480px;
-    }
-
-    .two-columns {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .rounded-corners-lg {
-        max-width: 360px;
     }
 }
