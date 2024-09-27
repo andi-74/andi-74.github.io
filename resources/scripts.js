@@ -5,8 +5,6 @@
 //     }
 // );
 
-/* <div class="first"><button type="button" onclick="smoothScroll(document.getElementById('second'))">Click Me!</button></div> */
-
 window.smoothScroll = function(target) {
     var scrollContainer = target;
     do { //find scroll container
@@ -146,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let i = 0; i < formElements.length; i++) {
                 formElements[i].disabled = true;
             }
-            
+
             // Submit form data
             const formAction = 'https://flukegaming.azurewebsites.net/raidsignup.php';
             fetch(formAction, {
