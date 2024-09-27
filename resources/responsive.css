@@ -23,6 +23,10 @@ smokey grey: #666666
     .rounded-corners-lg {
         max-width: 680px;
     }
+
+    .horizontal-padding-xlg {
+        padding: 0px 80px;
+    }
 }
 
 /* Styles for small screens (phones) */
@@ -38,6 +42,10 @@ smokey grey: #666666
     .two-columns {
         display: grid;
         grid-template-columns: 1fr;
+    }
+
+    .horizontal-padding-xlg {
+        padding: 0px 20px;
     }
 
     .rounded-corners-lg {
