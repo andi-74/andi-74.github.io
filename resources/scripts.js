@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         raidAlts.forEach(function(input) {
             if (checkbox.checked) {
-                input.setAttribute('required', 'required'); // Make inputs required
+                input.setAttribute('required', ''); // Make inputs required
             } else {
                 input.removeAttribute('required'); // Remove required attribute
             }
@@ -145,51 +145,55 @@ document.addEventListener('DOMContentLoaded', function() {
             formElements[i].disabled = true;
         }
 
-        // Submit form data
-        const formAction = 'https://flukegaming.azurewebsites.net/raidsignup.php';
-        fetch(formAction, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            
-            // Check if the response content type is JSON
-            const contentType = response.headers.get('Content-Type');
-            if (contentType && contentType.includes('application/json')) {
-                return response.json(); // Parse JSON if content type is application/json
-            } else {
-                throw new Error('Expected JSON response but got ' + contentType);
-            }
-        })
-        .then(data => {
-            console.log('Response data:', data); // Debugging output
-            if (data.status === 201) {
-                // Success
-                document.getElementById('success').classList.remove('hidden');
-            } else if (data.status === 400) {
-                // Missing data
-                document.getElementById('missing').classList.remove('hidden');
-            } else {
-                // Failure
-                document.getElementById('fail').classList.remove('hidden');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error); // Debugging output
-            document.getElementById('error').classList.remove('hidden');
-        })
-        .finally(() => {
-            console.log('Finally block executed'); // Debugging output
-            // Re-enable all form elements
-            for (let i = 0; i < formElements.length; i++) {
-                formElements[i].disabled = false;
-            }
-    
-            formSpinner.classList.add('hidden');
-        });
+        if (form.checkValidity()) {
+            // Submit form data
+            const formAction = 'https://flukegaming.azurewebsites.net/raidsignup.php';
+            fetch(formAction, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                
+                // Check if the response content type is JSON
+                const contentType = response.headers.get('Content-Type');
+                if (contentType && contentType.includes('application/json')) {
+                    return response.json(); // Parse JSON if content type is application/json
+                } else {
+                    throw new Error('Expected JSON response but got ' + contentType);
+                }
+            })
+            .then(data => {
+                console.log('Response data:', data); // Debugging output
+                if (data.status === 201) {
+                    // Success
+                    document.getElementById('success').classList.remove('hidden');
+                } else if (data.status === 400) {
+                    // Missing data
+                    document.getElementById('missing').classList.remove('hidden');
+                } else {
+                    // Failure
+                    document.getElementById('fail').classList.remove('hidden');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error); // Debugging output
+                document.getElementById('error').classList.remove('hidden');
+            })
+            .finally(() => {
+                console.log('Finally block executed'); // Debugging output
+                // Re-enable all form elements
+                for (let i = 0; i < formElements.length; i++) {
+                    formElements[i].disabled = false;
+                }
+        
+                formSpinner.classList.add('hidden');
+            });
+        } else {
+            form.reportValidity();
+        }
     });
 
     // Initial setup: show the first step and update button visibility
