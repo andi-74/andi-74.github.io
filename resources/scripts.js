@@ -169,6 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.status === 201) {
                 // Success
                 document.getElementById('success').classList.remove('hidden');
+            } else if (data.status === 400) {
+                // Missing data
+                document.getElementById('missing').classList.remove('hidden');
             } else {
                 // Failure
                 document.getElementById('fail').classList.remove('hidden');
@@ -195,5 +198,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function closeDiv(element) {
-    document.getElementById(element).style.display = 'none';
+    document.getElementById(element).classList.add('hidden');
 }
